@@ -12,6 +12,7 @@
             <h1>{{food_id.food_name}}</h1>
             <h2>{{food_id.food_desc}}</h2>
             <h3>${{food_id.food_price}}</h3>
+            <a href="{% url 'food:delete_food' food_id.id %}">Delete</a>
         </div>
     </div>
 </div>
