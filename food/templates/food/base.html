@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Django App</title>
 
     <link rel="stylesheet" href="{% static 'food/style.css' %}">
     <!-- CSS -->
@@ -15,7 +15,7 @@
 </head>
 <body>
     <nav class="navbar navbar-dark bg-dark">
-        <a href="#" class="navbar-brand">FoodApp</a>
+        <a href="{% url 'food:food_app_click' %}" class="navbar-brand">FoodApp</a>
 
         <div class="navbar">
             <a class="nav-item nav-link" href="{% url 'food:add_food' %}">Add Item</a>

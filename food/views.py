@@ -14,6 +14,9 @@ def index(request):
     #return HttpResponse(template.render(context,request))
     return render(request,'food/index.html',context)
 
+def food_app_click(request):
+    return render(request,'food/index.html')
+
 def foods(request):
     return HttpResponse('<h2>This is a food item view</h2>')
 
@@ -32,3 +35,13 @@ def add_food(request):
         return redirect('food:index')
     
     return render(request,'food/food-form.html',{'form':form})
+
+def update_food(request,id):
+    food_id = food_item.objects.get(id=id)
+    form = FoodForm(request.POST or None, instance=food_id)
+
+    if form.is_valid():
+        form.save()
+        return redirect('food:index')
+    
+    return render(request,'food/food-form.html',{'form':form,'food_id':food_id})
