@@ -4,7 +4,7 @@ from django.urls import path
 
 app_name = 'food'
 urlpatterns = [
-    path('',views.index,name='index'),
+    path('',views.IndexClassView.as_view(),name='index'),
     path('',views.food_app_click,name='food_app_click'),
     #/food/int
     path('<int:food_item_id>/',views.detail,name='detail'),
