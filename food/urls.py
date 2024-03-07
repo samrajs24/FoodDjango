@@ -7,7 +7,7 @@ urlpatterns = [
     path('',views.IndexClassView.as_view(),name='index'),
     path('',views.food_app_click,name='food_app_click'),
     #/food/int
-    path('<int:food_item_id>/',views.detail,name='detail'),
+    path('<int:pk>/',views.FoodDetail.as_view(),name='detail'),
     path('foods/',views.foods,name='foods'),
     # add items
     path('add',views.add_food,name='add_food'),
